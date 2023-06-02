@@ -52,6 +52,12 @@
     <Compile Include="Director.Designer.cs">
       <DependentUpon>Director.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeDirectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDirectorForm.Designer.cs">
+      <DependentUpon>EmployeeDirectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="SQLHelper.cs" />
     <EmbeddedResource Include="Director.resx">
       <DependentUpon>Director.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDirectorForm.resx">
+      <DependentUpon>EmployeeDirectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

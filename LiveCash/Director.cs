@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,30 +15,44 @@ namespace LiveCash
 {
     public partial class Director : Form
     {
-        public Director(SqlConnection connection)
+        public Director(SQLHelper helper)
         {
             InitializeComponent();
-            _myConnection = connection;
+            this._helper = helper;
+        }
+        private SQLHelper _helper;
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(Run => Application.Run(new Login()));
+            this.Close();
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
-        SqlConnection _myConnection;
 
-        private void button1_Click(object sender, EventArgs e)
+        EmployeeDirectorForm panel;
+        private void EmployeeButton_Click(object sender, EventArgs e)
         {
-            string ComDel = $" Select Employee.appointment from Users, Employee where [password] = '{PasswordTextBox.Text}' and [login] = '{LoginTextBox.Text}'";
-            SqlCommand cmd = new SqlCommand(ComDel, _myConnection);
-            string appointment = cmd.ExecuteScalar()?.ToString();
+            panel?.Close();
+            panel?.Dispose();
+            this.splitContainer1.Panel2.Controls.Clear();
 
 
-            switch (appointment)
-            {
-                case "Директор":
-                    MessageBox.Show("внатуре", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                default:
-                    MessageBox.Show("Отказано в доступе", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-            }
+            panel = new EmployeeDirectorForm();
+            panel.TopLevel = false;
+            panel.Visible = true;
+            panel.FormBorderStyle = FormBorderStyle.None;
+            panel.Dock = DockStyle.Fill;
+            this.splitContainer1.Panel2.Focus();
+            this.splitContainer1.Panel2.Controls.Add(panel);
+        }
+
+        private void PaymentsButton_Click(object sender, EventArgs e)
+        {
+            panel?.Close();
+            panel?.Dispose();
+            this.splitContainer1.Panel2.Controls.Clear();
         }
     }
 }

@@ -26,25 +26,22 @@ namespace LiveCash
 
             try
             {
-                string connectionString = @" Data Source=ALERTEDCOFFEE\SQLEXPRESS;Initial Catalog=Bank;Integrated Security=True; ";
-                _myConnection = new SqlConnection(connectionString);
-                _myConnection.Open();
+                SQLHelper sqlHelper = new SQLHelper();
 
-                string ComDel = $" Select Employee.appointment from Users, Employee where [password] = '{PasswordTextBox.Text}' and [login] = '{LoginTextBox.Text}'";
-                SqlCommand cmd = new SqlCommand(ComDel, _myConnection);
-                string appointment = cmd.ExecuteScalar()?.ToString();
+                string appointment = sqlHelper.Login(LoginTextBox.Text, PasswordTextBox.Text);
 
 
                 Thread thread = null;
                 switch (appointment)
                 {
                     case "Директор":
-                        thread = new Thread(Run => Application.Run(new Director(_myConnection)));
+                        thread = new Thread(Run => Application.Run(new Director(sqlHelper)));
                         break;
                     default:
                         MessageBox.Show("Отказано в доступе", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                 }
+
                 this.Close();
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
