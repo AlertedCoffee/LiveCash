@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,10 +47,16 @@ namespace LiveCash
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            SQLHelper sqlHelper = new SQLHelper();
+            Thread thread = new Thread(Run => Application.Run(new Director(sqlHelper)));
+            this.Close();
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
     }
 }

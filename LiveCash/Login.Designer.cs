@@ -31,8 +31,8 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-        this.LoginTextBox = new System.Windows.Forms.TextBox();
-        this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -100,6 +100,7 @@
             this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,6 +24,7 @@ namespace LiveCash
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
+            _helper.Connection.Close();
             Thread thread = new Thread(Run => Application.Run(new Login()));
             this.Close();
             thread.SetApartmentState(ApartmentState.STA);
@@ -31,15 +32,14 @@ namespace LiveCash
         }
 
 
-        EmployeeDirectorForm panel;
+        Form panel;
         private void EmployeeButton_Click(object sender, EventArgs e)
         {
             panel?.Close();
-            panel?.Dispose();
             this.splitContainer1.Panel2.Controls.Clear();
 
 
-            panel = new EmployeeDirectorForm();
+            panel = new EmployeeDirectorForm(_helper);
             panel.TopLevel = false;
             panel.Visible = true;
             panel.FormBorderStyle = FormBorderStyle.None;
@@ -51,7 +51,6 @@ namespace LiveCash
         private void PaymentsButton_Click(object sender, EventArgs e)
         {
             panel?.Close();
-            panel?.Dispose();
             this.splitContainer1.Panel2.Controls.Clear();
         }
     }
