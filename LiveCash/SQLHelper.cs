@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -34,16 +35,14 @@ namespace LiveCash
         }
 
 
-        public List<string[]> GetEmployeeList()
+        private List<string[]> ListReturner(string query)
         {
             var list = new List<string[]>();
 
-            string Query = $" Select * from Employee";
-
-            SqlDataReader reader = UseQuery(Query).ExecuteReader();
+            SqlDataReader reader = UseQuery(query).ExecuteReader();
             while (reader.Read())
             {
-                var employee = new string[8];
+                var employee = new string[reader.FieldCount];
                 for (int i = 0; i < employee.Length; i++)
                 {
                     employee[i] = reader[i].ToString();
@@ -54,6 +53,13 @@ namespace LiveCash
             reader.Close();
 
             return list;
+        }
+
+        public List<string[]> GetEmployeeList()
+        {
+            string query = $" Select * from Employee";
+            
+            return ListReturner(query);
         }
         
         public void UpdateEmployee(DataGridViewRow row)
@@ -85,6 +91,30 @@ namespace LiveCash
                 $"'{appointment}', '{address}', '{telephoneNumber}')";
 
             UseQuery(Query).ExecuteNonQuery();
+        }
+
+
+        public List<string[]> GetClientHistory()
+        {
+            string query = $" select Clients.firstName + ' ' + Clients.lastName + ' ' + Clients.middleName as 'ФИО', ClientHistory.* " +
+                $"from ClientHistory, Clients where Clients.ID = ClientHistory.clientID " +
+                $"  order by ClientHistory.clientID";
+
+            return ListReturner(query);
+        }
+
+        public List<string[]> GetPayments(int creditID)
+        {
+            string query = $" select paymentID, [sum], [date], paid, overdue from Payments where creditID = '{creditID}'";
+
+            return ListReturner(query);
+        }
+
+        public List<string[]> GetDebtors()
+        {
+            string query = $"select * from Debtors";
+
+            return ListReturner(query);
         }
     }
 }

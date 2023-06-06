@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCash.DirectorForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,13 +34,14 @@ namespace LiveCash
 
 
         Form panel;
-        private void EmployeeButton_Click(object sender, EventArgs e)
+
+        private void OpenPanel(Form form)
         {
             panel?.Close();
             this.splitContainer1.Panel2.Controls.Clear();
 
 
-            panel = new EmployeeDirectorForm(_helper);
+            panel = form;
             panel.TopLevel = false;
             panel.Visible = true;
             panel.FormBorderStyle = FormBorderStyle.None;
@@ -48,10 +50,14 @@ namespace LiveCash
             this.splitContainer1.Panel2.Controls.Add(panel);
         }
 
+        private void EmployeeButton_Click(object sender, EventArgs e)
+        {
+            OpenPanel(new EmployeeDirectorForm(_helper));
+        }
+
         private void PaymentsButton_Click(object sender, EventArgs e)
         {
-            panel?.Close();
-            this.splitContainer1.Panel2.Controls.Clear();
+            OpenPanel(new PaymentsDirectorForm(_helper));
         }
     }
 }

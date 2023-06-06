@@ -64,6 +64,12 @@
     <Compile Include="DirectorForms\EmployeeDirectorForm.Designer.cs">
       <DependentUpon>EmployeeDirectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DirectorForms\PaymentsDirectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorForms\PaymentsDirectorForm.Designer.cs">
+      <DependentUpon>PaymentsDirectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectorForms\EmployeeDirectorForm.resx">
       <DependentUpon>EmployeeDirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorForms\PaymentsDirectorForm.resx">
+      <DependentUpon>PaymentsDirectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
