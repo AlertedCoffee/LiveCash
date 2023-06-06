@@ -30,11 +30,11 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.EditeButton = new System.Windows.Forms.Button();
-            this.RefrashButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,11 +43,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(863, 444);
@@ -57,30 +62,33 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.AddButton);
             this.panel1.Controls.Add(this.DeleteButton);
             this.panel1.Controls.Add(this.SaveButton);
             this.panel1.Controls.Add(this.EditeButton);
-            this.panel1.Controls.Add(this.RefrashButton);
+            this.panel1.Controls.Add(this.RefreshButton);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 553);
+            this.panel1.Size = new System.Drawing.Size(1047, 464);
             this.panel1.TabIndex = 2;
             // 
-            // button1
+            // AddButton
             // 
-            this.button1.Location = new System.Drawing.Point(901, 239);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 37);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddButton.Location = new System.Drawing.Point(893, 290);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(133, 37);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(901, 184);
+            this.DeleteButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.DeleteButton.Location = new System.Drawing.Point(893, 235);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(133, 37);
             this.DeleteButton.TabIndex = 3;
@@ -90,7 +98,8 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(901, 128);
+            this.SaveButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SaveButton.Location = new System.Drawing.Point(893, 179);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(133, 37);
             this.SaveButton.TabIndex = 2;
@@ -101,7 +110,8 @@
             // 
             // EditeButton
             // 
-            this.EditeButton.Location = new System.Drawing.Point(901, 129);
+            this.EditeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.EditeButton.Location = new System.Drawing.Point(893, 180);
             this.EditeButton.Name = "EditeButton";
             this.EditeButton.Size = new System.Drawing.Size(133, 37);
             this.EditeButton.TabIndex = 2;
@@ -109,21 +119,22 @@
             this.EditeButton.UseVisualStyleBackColor = true;
             this.EditeButton.Click += new System.EventHandler(this.EditeButton_Click);
             // 
-            // RefrashButton
+            // RefreshButton
             // 
-            this.RefrashButton.Location = new System.Drawing.Point(901, 74);
-            this.RefrashButton.Name = "RefrashButton";
-            this.RefrashButton.Size = new System.Drawing.Size(133, 37);
-            this.RefrashButton.TabIndex = 1;
-            this.RefrashButton.Text = "Обновить";
-            this.RefrashButton.UseVisualStyleBackColor = true;
-            this.RefrashButton.Click += new System.EventHandler(this.RefrashButton_Click);
+            this.RefreshButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.RefreshButton.Location = new System.Drawing.Point(893, 125);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(133, 37);
+            this.RefreshButton.TabIndex = 1;
+            this.RefreshButton.Text = "Обновить";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // EmployeeDirectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 553);
+            this.ClientSize = new System.Drawing.Size(1047, 464);
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeDirectorForm";
             this.Text = "EmployeeDirectorForm";
@@ -140,9 +151,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button EditeButton;
-        private System.Windows.Forms.Button RefrashButton;
+        private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button DeleteButton;
     }
 }

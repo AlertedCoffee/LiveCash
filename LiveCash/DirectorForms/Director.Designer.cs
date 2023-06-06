@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.PaymentsButton = new System.Windows.Forms.Button();
             this.EmployeeButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
-            this.PaymentsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -51,8 +51,18 @@
             this.splitContainer1.Panel1.Controls.Add(this.PaymentsButton);
             this.splitContainer1.Panel1.Controls.Add(this.EmployeeButton);
             this.splitContainer1.Panel1.Controls.Add(this.LogoutButton);
-            this.splitContainer1.Size = new System.Drawing.Size(1138, 680);
+            this.splitContainer1.Size = new System.Drawing.Size(1138, 602);
             this.splitContainer1.TabIndex = 0;
+            // 
+            // PaymentsButton
+            // 
+            this.PaymentsButton.Location = new System.Drawing.Point(373, 4);
+            this.PaymentsButton.Name = "PaymentsButton";
+            this.PaymentsButton.Size = new System.Drawing.Size(123, 38);
+            this.PaymentsButton.TabIndex = 1;
+            this.PaymentsButton.Text = "Платежи";
+            this.PaymentsButton.UseVisualStyleBackColor = true;
+            this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
             // 
             // EmployeeButton
             // 
@@ -74,21 +84,11 @@
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // PaymentsButton
-            // 
-            this.PaymentsButton.Location = new System.Drawing.Point(373, 4);
-            this.PaymentsButton.Name = "PaymentsButton";
-            this.PaymentsButton.Size = new System.Drawing.Size(123, 38);
-            this.PaymentsButton.TabIndex = 1;
-            this.PaymentsButton.Text = "Платежи";
-            this.PaymentsButton.UseVisualStyleBackColor = true;
-            this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
-            // 
             // Director
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 680);
+            this.ClientSize = new System.Drawing.Size(1138, 602);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Director";
             this.Text = "Director";

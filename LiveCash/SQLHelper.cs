@@ -75,5 +75,16 @@ namespace LiveCash
             string Query = $"delete Employee where ID = '{row.Cells[0].Value}'";
             UseQuery(Query).ExecuteNonQuery();
         }
+
+        public void AddEmployee(string ID, string firstName, string lastName, 
+                                string middleName, string date, string appointment,
+                                string address, string telephoneNumber)
+        {
+            string Query = $"insert into Employee " +
+                $"values ({ID}, '{firstName}', '{lastName}', '{middleName}', '{date}', " +
+                $"'{appointment}', '{address}', '{telephoneNumber}')";
+
+            UseQuery(Query).ExecuteNonQuery();
+        }
     }
 }

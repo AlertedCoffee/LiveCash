@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCash.DirectorForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace LiveCash
             this.Dispose();
         }
 
-        private void DGInit()
+        public void DGInit()
         {
             try
             {
@@ -63,6 +64,7 @@ namespace LiveCash
             SaveButton.Visible = true;
             dataGridView1.ReadOnly = false;
             dataGridView1.Columns["ID"].ReadOnly = true;
+            dataGridView1.GridColor = System.Drawing.Color.IndianRed;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -70,6 +72,8 @@ namespace LiveCash
             ((Button)sender).Visible = false;
             EditeButton.Visible = true;
             dataGridView1.ReadOnly = true;
+            dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
+
 
             try
             {
@@ -84,7 +88,7 @@ namespace LiveCash
             catch (Exception ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
-        private void RefrashButton_Click(object sender, EventArgs e)
+        private void RefreshButton_Click(object sender, EventArgs e)
         {
             DGInit();
         }
@@ -108,6 +112,12 @@ namespace LiveCash
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            var AddForm = new AddEmployeeForm(_helper, this);
+            AddForm.ShowDialog();
         }
     }
 }
