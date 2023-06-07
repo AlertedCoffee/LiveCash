@@ -70,6 +70,30 @@
     <Compile Include="DirectorForms\PaymentsDirectorForm.Designer.cs">
       <DependentUpon>PaymentsDirectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerForms\AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForms\ManagerClientHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\ManagerClientHistoryForm.Designer.cs">
+      <DependentUpon>ManagerClientHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForms\ManagerClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\ManagerClientsForm.Designer.cs">
+      <DependentUpon>ManagerClientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForms\Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +114,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectorForms\PaymentsDirectorForm.resx">
       <DependentUpon>PaymentsDirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\ManagerClientHistoryForm.resx">
+      <DependentUpon>ManagerClientHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\ManagerClientsForm.resx">
+      <DependentUpon>ManagerClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -116,8 +152,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EmployeeForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

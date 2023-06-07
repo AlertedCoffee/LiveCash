@@ -55,6 +55,7 @@ namespace LiveCash
             return list;
         }
 
+        #region DirectorForm
         public List<string[]> GetEmployeeList()
         {
             string query = $" Select * from Employee";
@@ -123,5 +124,53 @@ namespace LiveCash
 
             UseQuery(query).ExecuteNonQuery();
         }
+
+        #endregion
+
+        #region ManagerForm
+        public List<string[]> GetClientsList()
+        {
+            string query = $" Select * from Clients";
+
+            return ListReturner(query);
+        }
+
+        public void UpdateClient(DataGridViewRow row)
+        {
+            string Query = $"update Clients set firstName = '{row.Cells[1].Value}'," +
+                $"lastName = '{row.Cells[2].Value}'," +
+                $"middleName = '{row.Cells[3].Value}'," +
+                $"address = '{row.Cells[4].Value}'," +
+                $"telephoneNumber = '{row.Cells[5].Value}' " +
+                $"where ID = '{row.Cells[0].Value}'";
+
+            UseQuery(Query).ExecuteNonQuery();
+        }
+
+        public void DeleteClient(DataGridViewRow row)
+        {
+            string Query = $"delete Clients where ID = '{row.Cells[0].Value}'";
+            UseQuery(Query).ExecuteNonQuery();
+        }
+
+
+        public void AddClient(string ID, string firstName, string lastName,
+                        string middleName, string address, string telephoneNumber)
+        {
+            string Query = $"insert into Clients " +
+                    $"values ({ID}, '{firstName}', '{lastName}', '{middleName}', '{address}', '{telephoneNumber}')";
+
+            UseQuery(Query).ExecuteNonQuery();
+        }
+
+        public List<string[]> GetClientHistoryList(int clientID)
+        {
+            string query = $"select * from ClientHistory where clientID = {clientID}";
+
+            return ListReturner(query);
+        }
+
+
+        #endregion
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCash.EmployeeForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,9 @@ namespace LiveCash
                     case "Директор":
                         thread = new Thread(Run => Application.Run(new Director(sqlHelper)));
                         break;
+                    case "Менеджер":
+                        thread = new Thread(Run => Application.Run(new Manager(sqlHelper)));
+                        break;
                     default:
                         MessageBox.Show("Отказано в доступе", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -53,7 +57,7 @@ namespace LiveCash
         private void Login_Load(object sender, EventArgs e)
         {
             SQLHelper sqlHelper = new SQLHelper();
-            Thread thread = new Thread(Run => Application.Run(new Director(sqlHelper)));
+            Thread thread = new Thread(Run => Application.Run(new Manager(sqlHelper)));
             this.Close();
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
