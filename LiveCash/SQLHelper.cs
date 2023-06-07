@@ -116,5 +116,12 @@ namespace LiveCash
 
             return ListReturner(query);
         }
+
+        public void CheckPayments()
+        {
+            string query = $"execute checkPayments";
+
+            UseQuery(query).ExecuteNonQuery();
+        }
     }
 }

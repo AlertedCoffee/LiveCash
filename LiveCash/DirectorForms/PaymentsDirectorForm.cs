@@ -102,7 +102,9 @@ namespace LiveCash.DirectorForms
 
         private void CheckDebtorsButton_Click(object sender, EventArgs e)
         {
-
+            _helper.CheckPayments();
+            PaymentsDGInit(Convert.ToInt32(HistoryDataGridView["creditID", HistoryDataGridView.CurrentCell.RowIndex].Value));
+            DebtorsDGInit();
         }
     }
 }

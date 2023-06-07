@@ -48,27 +48,27 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.PaymentsButton);
             this.splitContainer1.Panel1.Controls.Add(this.EmployeeButton);
+            this.splitContainer1.Panel1.Controls.Add(this.PaymentsButton);
             this.splitContainer1.Panel1.Controls.Add(this.LogoutButton);
-            this.splitContainer1.Size = new System.Drawing.Size(1138, 602);
+            this.splitContainer1.Size = new System.Drawing.Size(1002, 627);
             this.splitContainer1.TabIndex = 0;
             // 
             // PaymentsButton
             // 
-            this.PaymentsButton.Location = new System.Drawing.Point(373, 4);
+            this.PaymentsButton.Location = new System.Drawing.Point(213, 4);
             this.PaymentsButton.Name = "PaymentsButton";
-            this.PaymentsButton.Size = new System.Drawing.Size(123, 38);
+            this.PaymentsButton.Size = new System.Drawing.Size(194, 38);
             this.PaymentsButton.TabIndex = 1;
-            this.PaymentsButton.Text = "Платежи";
+            this.PaymentsButton.Text = "Средства и должники";
             this.PaymentsButton.UseVisualStyleBackColor = true;
             this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
             // 
             // EmployeeButton
             // 
-            this.EmployeeButton.Location = new System.Drawing.Point(246, 4);
+            this.EmployeeButton.Location = new System.Drawing.Point(3, 4);
             this.EmployeeButton.Name = "EmployeeButton";
-            this.EmployeeButton.Size = new System.Drawing.Size(102, 38);
+            this.EmployeeButton.Size = new System.Drawing.Size(194, 38);
             this.EmployeeButton.TabIndex = 0;
             this.EmployeeButton.Text = "Сотрудники";
             this.EmployeeButton.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             // LogoutButton
             // 
-            this.LogoutButton.Location = new System.Drawing.Point(3, 4);
+            this.LogoutButton.Location = new System.Drawing.Point(888, 4);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(102, 38);
             this.LogoutButton.TabIndex = 0;
@@ -88,8 +88,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 602);
+            this.ClientSize = new System.Drawing.Size(1002, 627);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(700, 550);
             this.Name = "Director";
             this.Text = "Director";
             this.splitContainer1.Panel1.ResumeLayout(false);
