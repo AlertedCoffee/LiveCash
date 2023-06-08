@@ -56,7 +56,7 @@ namespace LiveCash.EmployeeForms
 
         private void PaymentsButton_Click(object sender, EventArgs e)
         {
-            OpenPanel(new PaymentsDirectorForm(_helper));
+            OpenPanel(new AddNewCredit(_helper));
         }
     }
 }

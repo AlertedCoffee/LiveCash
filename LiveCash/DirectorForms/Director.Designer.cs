@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.PaymentsButton = new System.Windows.Forms.Button();
             this.EmployeeButton = new System.Windows.Forms.Button();
+            this.PaymentsButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,16 +54,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1002, 627);
             this.splitContainer1.TabIndex = 0;
             // 
-            // PaymentsButton
-            // 
-            this.PaymentsButton.Location = new System.Drawing.Point(213, 4);
-            this.PaymentsButton.Name = "PaymentsButton";
-            this.PaymentsButton.Size = new System.Drawing.Size(194, 38);
-            this.PaymentsButton.TabIndex = 1;
-            this.PaymentsButton.Text = "Средства и должники";
-            this.PaymentsButton.UseVisualStyleBackColor = true;
-            this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
-            // 
             // EmployeeButton
             // 
             this.EmployeeButton.Location = new System.Drawing.Point(3, 4);
@@ -74,11 +64,22 @@
             this.EmployeeButton.UseVisualStyleBackColor = true;
             this.EmployeeButton.Click += new System.EventHandler(this.EmployeeButton_Click);
             // 
+            // PaymentsButton
+            // 
+            this.PaymentsButton.Location = new System.Drawing.Point(213, 4);
+            this.PaymentsButton.Name = "PaymentsButton";
+            this.PaymentsButton.Size = new System.Drawing.Size(194, 38);
+            this.PaymentsButton.TabIndex = 1;
+            this.PaymentsButton.Text = "Средства и должники";
+            this.PaymentsButton.UseVisualStyleBackColor = true;
+            this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
+            // 
             // LogoutButton
             // 
-            this.LogoutButton.Location = new System.Drawing.Point(888, 4);
+            this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LogoutButton.Location = new System.Drawing.Point(900, 0);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(102, 38);
+            this.LogoutButton.Size = new System.Drawing.Size(102, 50);
             this.LogoutButton.TabIndex = 0;
             this.LogoutButton.Text = "Выход";
             this.LogoutButton.UseVisualStyleBackColor = true;

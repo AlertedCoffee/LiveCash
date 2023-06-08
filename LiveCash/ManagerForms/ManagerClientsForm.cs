@@ -31,7 +31,7 @@ namespace LiveCash.ManagerForms
             try
             {
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("ID", "ID");
+                dataGridView1.Columns.Add("ID", "ID клиента");
                 dataGridView1.Columns.Add("firstName", "Имя");
                 dataGridView1.Columns.Add("secondName", "Фамилия");
                 dataGridView1.Columns.Add("middleName", "Отчество");

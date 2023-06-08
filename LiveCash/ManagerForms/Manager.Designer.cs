@@ -70,28 +70,29 @@
             this.PaymentsButton.Name = "PaymentsButton";
             this.PaymentsButton.Size = new System.Drawing.Size(194, 38);
             this.PaymentsButton.TabIndex = 1;
-            this.PaymentsButton.Text = "Средства и должники";
+            this.PaymentsButton.Text = "Выдача средств";
             this.PaymentsButton.UseVisualStyleBackColor = true;
             this.PaymentsButton.Click += new System.EventHandler(this.PaymentsButton_Click);
             // 
             // LogoutButton
             // 
-            this.LogoutButton.Location = new System.Drawing.Point(888, 4);
+            this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LogoutButton.Location = new System.Drawing.Point(900, 0);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(102, 38);
+            this.LogoutButton.Size = new System.Drawing.Size(102, 50);
             this.LogoutButton.TabIndex = 0;
             this.LogoutButton.Text = "Выход";
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // Employee
+            // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 627);
             this.Controls.Add(this.splitContainer1);
             this.MinimumSize = new System.Drawing.Size(700, 550);
-            this.Name = "Employee";
+            this.Name = "Manager";
             this.Text = "Employee";
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

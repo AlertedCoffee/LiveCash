@@ -43,6 +43,11 @@
             // ID
             // 
             this.ID.Location = new System.Drawing.Point(35, 50);
+            this.ID.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(64, 22);
             this.ID.TabIndex = 0;

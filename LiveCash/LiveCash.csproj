@@ -76,6 +76,12 @@
     <Compile Include="ManagerForms\AddClientForm.Designer.cs">
       <DependentUpon>AddClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerForms\AddNewCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\AddNewCredit.Designer.cs">
+      <DependentUpon>AddNewCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForms\ManagerClientHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForms\AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\AddNewCredit.resx">
+      <DependentUpon>AddNewCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForms\ManagerClientHistoryForm.resx">
       <DependentUpon>ManagerClientHistoryForm.cs</DependentUpon>

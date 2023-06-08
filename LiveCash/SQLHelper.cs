@@ -170,7 +170,25 @@ namespace LiveCash
             return ListReturner(query);
         }
 
+        public void AddCredit(int creditID, int clientID, DateTime date, int period, int sum, int count)
+        {
+            string query = $"insert into ClientHistory " +
+                           $"values ({creditID}, {clientID}, '{date.ToString()}', '{date.AddDays(period * 7).ToString()}', {sum}, 0, 0) " +
+                           $"declare @per decimal(5,2) " +
+                           $"set @per = (select dbo.getPercent({count}, {sum}, {period})) " +
+                           $"execute addCreditPlan {creditID}, {clientID}, '{date}', {period}, {sum}, @per; ";
 
+
+            UseQuery(query).ExecuteNonQuery();
+        }
+        
+
+        public bool ExistClient(int clientID)
+        {
+            string query = $"select count(*) from Clients where ID = {clientID}";
+
+            return (UseQuery(query).ExecuteScalar().ToString() != "0");
+        }
         #endregion
     }
 }
